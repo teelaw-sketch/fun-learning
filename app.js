@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://funlearning-backend-t6ml.onrender.com"; 
+const BACKEND_URL = "https://funlearning-backend.onrender.com"; 
 let socket = null;
 let currentActiveQuiz = null;
 
