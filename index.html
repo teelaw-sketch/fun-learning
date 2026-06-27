@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FunLearning - Welcome Matrix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gateway-body">
+    <div id="global-loading-indicator" class="loader-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Connecting to Live AI Generation Pipeline Grid...</p>
+    </div>
+
+    <div id="page-landing" class="page active interactive-pop">
+        <header class="gateway-header">
+            <div class="logo-wrapper">
+                <img src="fllogo.jpg" alt="FunLearning Logo" class="app-custom-logo">
+            </div>
+            <h1>FunLearning</h1>
+            <p class="tagline">Personalized Live AI Matrix Learning Path</p>
+        </header>
+        <main class="gateway-actions">
+            <button class="prime-btn" onclick="navigateToPage('page-signup')">Sign Up</button>
+            <button class="prime-btn" onclick="navigateToPage('page-login')">Login</button>
+            <div class="divider-text"><span>OR</span></div>
+            <button class="google-btn" onclick="handleGoogleOAuthAuthentication()">
+                <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/web-2x_adbe047201b472.png" alt="Google Logo">
+                Continue with Google
+            </button>
+            <button class="sub-btn-link" onclick="navigateToPage('page-explore')">Explore Courses ➔</button>
+        </main>
+    </div>
+
+    <div id="page-explore" class="page">
+        <button class="back-arrow" onclick="navigateToPage('page-landing')">← Back</button>
+        <h2>Explore Our 20 Core Courses</h2>
+        <div class="explore-scroll-container">
+            <div class="course-summary-card"><h3>Mathematics</h3><p>Master numbers, algebra, equations, geometry, and problem-solving tracking. Learn foundational rules step-by-step to confidently approach formulas and complex mathematical reasoning tracks.</p></div>
+            <div class="course-summary-card"><h3>English</h3><p>Build strong vocabulary, grammar accuracy, reading comprehension skills, and essay writing templates. Perfect for polishing communication blocks and boosting overall high school literary performance.</p></div>
+            <div class="course-summary-card"><h3>Chemistry</h3><p>Explore elements, atomic structures, chemical bonds, reactions, and laboratory equations. Understand the microscopic world and its practical application tracks through clear interactive structural breakdowns.</p></div>
+            <div class="course-summary-card"><h3>Further Mathematics</h3><p>Advance into calculus, complex trigonometry, vectors, matrices, and mechanics tracking. Perfect for students looking to challenge themselves and build advanced technical math foundations.</p></div>
+            <div class="course-summary-card"><h3>Biology</h3><p>Study living organisms, plant processes, human anatomy systems, genetics, and natural ecosystems. Discover how life works and interacts inside clear structural biology modules.</p></div>
+            <div class="course-summary-card"><h3>Physics</h3><p>Learn the core laws of universe motion, force metrics, energy transfers, light properties, and electrical grids. Turn abstract equations into real-world physical solutions.</p></div>
+            <div class="course-summary-card"><h3>Economics</h3><p>Understand micro and macro markets, supply-demand curves, inflation spikes, trade mechanics, and consumer finance. Learn how resource allocation governs daily societal financial structures.</p></div>
+            <div class="course-summary-card"><h3>Agricultural Science</h3><p>Discover soil composition layers, crop cultivation cycles, livestock rearing systems, and modern mechanized farming technology. Master tools used to build secure food production lines.</p></div>
+            <div class="course-summary-card"><h3>Digital Technology</h3><p>Dive into hardware systems, operating infrastructure, internet engineering, and computing applications. Build a solid baseline vocabulary for handling digital tools and smart tech grids.</p></div>
+            <div class="course-summary-card"><h3>Civic Education</h3><p>Understand human rights, national citizenship duties, government branches, societal ethics, and community laws. Learn how to responsibly participate in local civic progress matrix tracks.</p></div>
+            <div class="course-summary-card"><h3>Basic Technology</h3><p>Explore technical drawing basics, structural engineering materials, simple mechanics, wood/metal working, and energy tools. Handheld practical skills made clear for early inventors.</p></div>
+            <div class="course-summary-card"><h3>Music Structure</h3><p>Learn script reading, scales, rhythmic notation, chord changes, and melody composition trees. Perfect for understanding audio logic blocks and streaming software interaction designs.</p></div>
+            <div class="course-summary-card"><h3>Cultural and Creative Arts (CCA)</h3><p>Unleash creativity through traditional local visual arts, cultural dance history, dramatic expressions, layout craft designs, and rich artistic presentation modules built from scratch.</p></div>
+            <div class="course-summary-card"><h3>Cyber Security</h3><p>Learn foundational network defense rules, device safety practices, secure encryption protocols, and simple ethical hacking boundaries. Protect operational data systems from digital security threats.</p></div>
+            <div class="course-summary-card"><h3>Graphic Design (PixelLab Focus)</h3><p>Create professional layouts on your mobile device. Master 3D typography adjustments, transparent layer masks, shadow styling, vector positioning, and modern high-end marketing palettes.</p></div>
+            <div class="course-summary-card"><h3>Web Development (Acode Focus)</h3><p>Build native website layouts directly on your phone. Write semantic HTML structures, beautiful CSS design grids, responsive structural breakpoints, and interactive javascript logic nodes.</p></div>
+            <div class="course-summary-card"><h3>Image Generation</h3><p>Discover free generative AI prompt mechanics. Learn how to describe visual scenes, adjust camera styles, leverage lighting weights, and output custom artistic assets.</p></div>
+            <div class="course-summary-card"><h3>Geography Matrix</h3><p>Explore earth map reading, rock composition structures, weather climate cycles, map sketching tools, and global population distributions across natural geographic frameworks.</p></div>
+            <div class="course-summary-card"><h3>Financial Accounting</h3><p>Master ledger entry records, balance sheet statements, debit/credit tracking rules, cash books, and auditing loops. Clean, systematic money reporting modules for tracking systems.</p></div>
+            <div class="course-summary-card"><h3>History and Structure</h3><p>Uncover major global civilizations, historical turning points, political evolutionary matrices, and legendary leadership milestones that actively built our modern world structure.</p></div>
+        </div>
+    </div>
+
+    <div id="page-signup" class="page">
+        <button class="back-arrow" onclick="navigateToPage('page-landing')">← Back</button>
+        <h2>Sign Up</h2>
+        <form id="form-signup" onsubmit="handleRegistration(event)">
+            <div class="input-group"><label>Name</label><input type="text" id="reg-name" required placeholder="Name"></div>
+            <div class="input-group"><label>Class</label><input type="text" id="reg-class" required placeholder="Class"></div>
+            <div class="dual-row">
+                <div class="input-group"><label>Age</label><input type="number" id="reg-age" required placeholder="Age"></div>
+                <div class="input-group"><label>Sex</label><input type="text" id="reg-sex" required placeholder="Sex"></div>
+            </div>
+            <div class="input-group"><label>Email</label><input type="email" id="reg-email" required placeholder="Email"></div>
+            <div class="input-group"><label>Password</label><input type="password" id="reg-pass" required placeholder="Password"></div>
+            <button type="submit" class="prime-btn form-submit">Sign up</button>
+        </form>
+    </div>
+
+    <div id="page-login" class="page">
+        <button class="back-arrow" onclick="navigateToPage('page-landing')">← Back</button>
+        <h2>Login</h2>
+        <form id="form-login" onsubmit="handleLogin(event)">
+            <div class="input-group"><label>Email</label><input type="email" id="login-email" required placeholder="Email"></div>
+            <div class="input-group"><label>Password</label><input type="password" id="login-pass" required placeholder="Password"></div>
+            <button type="submit" class="prime-btn form-submit">Login</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

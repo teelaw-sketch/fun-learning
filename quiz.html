@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FunLearning - Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+    <div id="global-loading-indicator" class="loader-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>AI configuring adaptive assessment streams...</p>
+    </div>
+    <div class="app-container">
+        <div id="quiz-subview-hub" class="subview active interactive-pop">
+            <h2>AI Sparring Arena</h2>
+            <p style="text-align: center; color: #666; margin-top: 10px;">Test your grasp on topics starting from scratch up to expert tracks!</p>
+            <button class="shadow-action-btn" style="margin: 50px auto;" onclick="requestLiveAIQuiz()">Launch Session</button>
+        </div>
+        <div id="quiz-subview-arena" class="subview interactive-pop">
+            <div id="quiz-question-text" class="question-display-card"></div>
+            <div id="quiz-options-box"></div>
+            <div class="quiz-utility-row">
+                <span class="util-link" onclick="revealQuizExplanation()">💡 Explain Context</span>
+            </div>
+            <div id="quiz-explanation-box" class="explanation-hidden-drawer slide-down-anim" style="display: none;">
+                <p id="quiz-explanation-text"></p>
+            </div>
+        </div>
+        
+        <nav class="bottom-navigation-bar">
+            <a href="dashboard.html" class="nav-tab">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span class="tab-lbl">Home</span>
+            </a>
+            <a href="learn.html" class="nav-tab">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <span class="tab-lbl">Learn</span>
+            </a>
+            <a href="quiz.html" class="nav-tab active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span class="tab-lbl">Quiz</span>
+            </a>
+            <a href="group.html" class="nav-tab">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span class="tab-lbl">Group</span>
+            </a>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
